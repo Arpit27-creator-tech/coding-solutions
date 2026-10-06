@@ -41,35 +41,44 @@ Output: [5]
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 11.1 MB (beats 96.80%)  
-**Submitted:** 2026-10-06T19:01:55.753Z  
+**Memory:** 11.3 MB (beats 38.43%)  
+**Submitted:** 2026-10-06T19:08:04.814Z  
 
 ```cpp
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
-        if (!head || left == right) return head;
+        if(!head || !head->next || left==right) return head;
 
         ListNode dummy(0, head);
-        ListNode* start = &dummy;
+        ListNode* temp=&dummy;
+        ListNode* start=NULL;
+        int ind=0;
 
-        
-        for (int i = 1; i < left; i++) start = start->next;
-
-        ListNode* curr = start->next;   
-        ListNode* prev = nullptr;
-
-        
-        for (int i = 0; i < right - left + 1; i++) {
-            ListNode* next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
+        while(ind < left-1)
+        {
+            temp=temp->next;
+            ind++;
         }
+        start=temp;                       
 
-        
-        start->next->next = curr;  
-        start->next = prev;        
+        while(ind < right)
+        {
+            temp=temp->next;
+            ind++;
+        }
+        ListNode* stop=temp->next;        
+        ListNode* prev=stop;
+
+        ListNode* curr=start->next;
+        while(curr!=stop)                 
+        {
+            ListNode* next=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next;
+        }
+        start->next=prev;                 
 
         return dummy.next;
     }
