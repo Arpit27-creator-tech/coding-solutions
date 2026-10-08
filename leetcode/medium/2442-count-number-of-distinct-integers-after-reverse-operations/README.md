@@ -42,9 +42,9 @@ The number of distinct integers in this array is 1 (The number 2).
 ## Solution
 
 **Language:** C++  
-**Runtime:** 196 ms (beats 33.23%)  
+**Runtime:** 172 ms (beats 81.02%)  
 **Memory:** 110.6 MB (beats 68.44%)  
-**Submitted:** 2026-10-08T19:40:57.346Z  
+**Submitted:** 2026-10-08T19:44:52.782Z  
 
 ```cpp
 class Solution {
@@ -54,10 +54,7 @@ public:
         for(int i=0;i<nums.size();i++)
         {
             int revnum=0;
-            if(seen.find(nums[i])==seen.end())
-            {
-                seen.insert(nums[i]);
-            }
+            seen.insert(nums[i]);
             int num=nums[i];
             while(num)
             {
@@ -65,7 +62,7 @@ public:
                 revnum=revnum*10+dig;
                 num/=10;
             }
-            if(seen.find(revnum)==seen.end()) seen.insert(revnum);
+            seen.insert(revnum);
         }
         return seen.size();
     }
