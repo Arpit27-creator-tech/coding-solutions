@@ -5,10 +5,7 @@ public:
         for(int i=0;i<nums.size();i++)
         {
             int revnum=0;
-            if(seen.find(nums[i])==seen.end())
-            {
-                seen.insert(nums[i]);
-            }
+            seen.insert(nums[i]);
             int num=nums[i];
             while(num)
             {
@@ -16,7 +13,7 @@ public:
                 revnum=revnum*10+dig;
                 num/=10;
             }
-            if(seen.find(revnum)==seen.end()) seen.insert(revnum);
+            seen.insert(revnum);
         }
         return seen.size();
     }
