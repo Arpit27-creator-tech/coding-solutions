@@ -42,26 +42,22 @@ Explanation: The robot moves left twice. It ends up two "moves" to the left of t
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.9 MB  
-**Submitted:** 2026-10-08T19:18:13.463Z  
+**Runtime:** 3 ms (beats 44.79%)  
+**Memory:** 10.4 MB (beats 46.78%)  
+**Submitted:** 2026-10-08T19:19:41.867Z  
 
 ```cpp
 class Solution {
 public:
     bool judgeCircle(string moves) {
-        int move=0;
-        for(int i=0;i<moves.size();i++)
-        {
-            char ch=moves[i];
-            if(ch=='U') move++;
-            else if(ch=='D') move--;
-            else if(ch=='R') move+=2;
-            else move-=2;
-
+        int x = 0, y = 0;
+        for (char ch : moves) {
+            if (ch == 'U') y++;
+            else if (ch == 'D') y--;
+            else if (ch == 'R') x++;
+            else if (ch == 'L') x--;
         }
-        if(move==0) return true;
-        return false;
+        return x == 0 && y == 0;
     }
 };
 ```
