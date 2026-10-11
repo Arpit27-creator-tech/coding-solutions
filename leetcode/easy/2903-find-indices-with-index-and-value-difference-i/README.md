@@ -62,32 +62,22 @@ Hence, [-1,-1] is returned.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 1 ms (beats 15.05%)  
-**Memory:** 29.2 MB (beats 5.59%)  
-**Submitted:** 2026-10-11T16:33:52.620Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 21.3 MB (beats 65.38%)  
+**Submitted:** 2026-10-11T16:34:51.200Z  
 
 ```cpp
 class Solution {
 public:
     vector<int> findIndices(vector<int>& nums, int indexDifference, int valueDifference) {
-        vector<int >ans;
-        for(int i=0;i<nums.size();i++)
-        {
-            for(int j=0;j<nums.size();j++)
-            {
-                if(abs(i-j)>=indexDifference && abs(nums[i]-nums[j])>=valueDifference)
-                {
-                    ans.push_back(i);
-                    ans.push_back(j);
-                }
+        int n = nums.size();
+        for (int i = 0; i < n; i++) {
+            for (int j = i + indexDifference; j < n; j++) {
+                if (abs(nums[i] - nums[j]) >= valueDifference)
+                    return {i, j};
             }
         }
-        if(ans.size()==0)
-        {
-            ans.push_back(-1);
-            ans.push_back(-1);
-        }
-        return ans;
+        return {-1, -1};
     }
 };
 ```
