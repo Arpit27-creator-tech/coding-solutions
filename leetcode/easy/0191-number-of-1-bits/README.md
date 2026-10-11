@@ -52,14 +52,14 @@ The input binary string  **1111111111111111111111111111101**  has a total of thi
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 8.3 MB (beats 11.18%)  
-**Submitted:** 2026-10-11T09:18:29.031Z  
+**Memory:** 8.2 MB (beats 81.52%)  
+**Submitted:** 2026-10-11T09:18:47.685Z  
 
 ```cpp
 class Solution {
 public:
     int hammingWeight(int n) {
-        long long cnt=0;
+        int cnt=0;
         while(n>0)
         {
             if(n&1) cnt++;
