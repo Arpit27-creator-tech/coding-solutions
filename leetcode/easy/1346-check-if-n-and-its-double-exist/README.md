@@ -40,9 +40,9 @@ Explanation: There is no i and j that satisfy the conditions.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 3 ms (beats 25.89%)  
-**Memory:** 13.8 MB (beats 43.25%)  
-**Submitted:** 2026-10-12T07:46:37.180Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 13.9 MB (beats 36.01%)  
+**Submitted:** 2026-10-12T07:46:44.235Z  
 
 ```cpp
 class Solution {
