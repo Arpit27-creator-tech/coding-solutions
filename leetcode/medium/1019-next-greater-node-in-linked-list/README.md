@@ -39,21 +39,25 @@ Output: [7,0,5,5,0]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 916 ms (beats 5.52%)  
-**Memory:** 45.5 MB (beats 74.78%)  
-**Submitted:** 2026-10-13T17:44:56.435Z  
+**Runtime:** 7 ms (beats 53.96%)  
+**Memory:** 49 MB (beats 5.70%)  
+**Submitted:** 2026-10-13T17:57:41.250Z  
 
 ```cpp
 class Solution {
 public:
     vector<int> nextLargerNodes(ListNode* head) {
-        vector<int> ans;
-        for (ListNode* temp = head; temp; temp = temp->next) {
-            ListNode* curr = temp->next;
-            while (curr && curr->val <= temp->val) {
-                curr = curr->next;
+        vector<int> vals, ans;
+        stack<int> st; 
+        int i = 0;
+        for (ListNode* p = head; p; p = p->next, i++) {
+            vals.push_back(p->val);
+            ans.push_back(0);
+            while (!st.empty() && vals[st.top()] < p->val) {
+                ans[st.top()] = p->val;
+                st.pop();
             }
-            ans.push_back(curr ? curr->val : 0);
+            st.push(i);
         }
         return ans;
     }
