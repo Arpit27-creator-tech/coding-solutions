@@ -41,20 +41,16 @@ Return `true` if its binary representation contains  **exactly one adjacent pai
 ## Solution
 
 **Language:** C++  
-**Runtime:** 1 ms (beats 11.53%)  
-**Memory:** 7.7 MB (beats 98.50%)  
-**Submitted:** 2026-10-15T16:51:36.561Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 7.9 MB (beats 54.14%)  
+**Submitted:** 2026-10-15T16:52:02.062Z  
 
 ```cpp
 class Solution {
 public:
     bool consecutiveSetBits(int n) {
-        int pairs = 0;
-        while (n > 0) {
-            if ((n & 3) == 3) pairs++;  
-            n >>= 1;
-        }
-        return pairs == 1;
+        int x = n & (n >> 1);
+        return x != 0 && (x & (x - 1)) == 0;  
     }
 };
 ```
