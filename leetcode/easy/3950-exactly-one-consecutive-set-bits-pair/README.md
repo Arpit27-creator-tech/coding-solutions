@@ -42,8 +42,8 @@ Return `true` if its binary representation contains  **exactly one adjacent pai
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 7.6 MB (beats 98.22%)  
-**Submitted:** 2026-10-18T19:06:16.195Z  
+**Memory:** 7.8 MB (beats 53.81%)  
+**Submitted:** 2026-10-19T18:52:32.233Z  
 
 ```cpp
 class Solution {
