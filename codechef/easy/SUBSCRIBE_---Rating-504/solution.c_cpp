@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int n, x;
+    cin >> n >> x;
+    
+    // Calculate the number of subscriptions needed (ceil(n / 6))
+    int subscriptions = (n + 5) / 6;
+    
+    // Total cost is subscriptions * cost per subscription
+    cout << subscriptions * x << "\n";
+}
+
+int main() {
+    // Fast I/O
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
