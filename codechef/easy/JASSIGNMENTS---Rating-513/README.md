@@ -48,7 +48,7 @@ No
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-04T06:22:47.860Z  
+**Submitted:** 2026-11-04T06:23:00.051Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -56,18 +56,22 @@ using namespace std;
 
 int main() {
     int t;
-    cin >> t;
-    while (t--) {
+    cin>>t;
+    
+    for(int i=0;i<t;i++)
+    {
         int x;
-        cin >> x;
-        if (x <= 7) {
-            cout << "Yes\n";
-        } else {
-            cout << "No\n";
-        }
+        cin>>x;
+        if(x+3>10) cout<<"No"<<endl;
+        else cout<<"Yes"<<endl;
+        
     }
     return 0;
+    
+    
+
 }
+
 ```
 
 ---
